@@ -481,7 +481,7 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: 100px; }
+  gap: 5vh; }
 
 .base_header {
   display: -webkit-box;
@@ -796,7 +796,6 @@ body {
   font-weight: 400;
   font-size: 24px;
   line-height: 40px;
-  /* or 167% */
   text-transform: uppercase;
   margin-top: 7vh; }
 
@@ -901,7 +900,6 @@ swiper-slide img {
   font-weight: 500;
   font-size: 13px;
   line-height: 27px;
-  /* or 208% */
   text-transform: uppercase;
   color: #000000; }
 
@@ -965,7 +963,6 @@ swiper-slide img {
   font-weight: 600;
   font-size: 14px;
   line-height: 25px;
-  /* or 179% */
   text-transform: uppercase;
   color: #FFFFFF; }
 
@@ -1001,7 +998,6 @@ swiper-slide img {
   font-weight: 500;
   font-size: 14px;
   line-height: 25px;
-  /* or 179% */
   text-transform: uppercase;
   color: #9A9A9A; }
 
