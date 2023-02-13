@@ -732,7 +732,7 @@ body {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  gap: 40px; }
+  gap: 2vh; }
 
 .price_block__packages {
   display: -webkit-box;
@@ -797,7 +797,7 @@ body {
   font-size: 24px;
   line-height: 40px;
   text-transform: uppercase;
-  margin-top: 7vh; }
+  margin-top: 5vh; }
 
 @media (orientation: portrait) {
   .price_block {
@@ -822,7 +822,7 @@ body {
 
 swiper-container {
   width: 100%;
-  padding-top: 100px;
+  padding-top: 8vh;
   padding-bottom: 50px;
   --swiper-pagination-color: #DB0000; }
 

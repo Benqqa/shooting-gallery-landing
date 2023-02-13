@@ -39,6 +39,7 @@ function on_load()
  */
 function change_active(e)
 {
+    console.log('ddddd');
     var nav__menu= document.querySelector('.nav__menu');
     nav__menu.classList.toggle('_active');
     var menu__body= document.querySelector('.menu__body');
