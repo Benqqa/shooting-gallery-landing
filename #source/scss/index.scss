@@ -1016,3 +1016,9 @@
 			min-width: 200px;
 		}
 	}
+
+@media (orientation: landscape) {
+	.price_block, .map_block,.guns_block, .info_block, .start_block {
+		height: auto;
+	}
+}
