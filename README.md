@@ -1,1 +1,1 @@
-# shooting-gallery-landing-
+# shooting-gallery-landing
