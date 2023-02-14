@@ -32,6 +32,17 @@
 	$md2: 991.98;
 	$md3: 1407;
 	$md4: 479.98;
+
+	:root {
+		--text_font_size: 24px;
+		--text_font_size_mobile: 15px;
+		--text_line_height_mobile: 27px;
+		--m_text_font_size: 32px;
+		--m_text_font_size_mobile: 24px;
+		--title_font_size: 36px;
+		--title_font_size_mobile: 30px;
+		--title_line_height_mobile: 35px;
+	}
 	
 	
 	
@@ -146,7 +157,7 @@
 	
 		.icon__menu {
 		display: none;
-	
+		-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 		@media (max-width:  $md3+1px) {
 			cursor: pointer;
 			display: block;
@@ -223,12 +234,12 @@
 				text-align: center;
 				margin: 40px 0 0 0;
 				li{
-					padding: 0 0 30px 0;
+					padding: 0 0 20px 0;
 					&:last-child{
 						padding: 0;
 					}
 					&:first-child{
-						margin-top: 30px;
+						margin-top: 20px;
 					}
 				}
 			}
@@ -487,7 +498,7 @@
 		font-family: Aldrich Rus;
 		font-style: normal;
 		font-weight: 400;
-		font-size: 36px;
+		font-size: var(--title_font_size);
 		line-height: 35px;
 		text-transform: uppercase;
 		color: #000000;
@@ -503,7 +514,7 @@
 		font-family: 'Montserrat', sans-serif;
 		font-style: normal;
 		font-weight: 500;
-		font-size: 24px;
+		font-size: var(--text_font_size);
 		line-height: 30px;
 		text-transform: uppercase;
 	
@@ -653,6 +664,14 @@
 		.info_block__text {
 			font-size: 22px;
 		}
+		.info_block__text {
+			font-size: var(--text_font_size_mobile);
+			line-height: var(--text_line_height_mobile);
+		}
+		.base_title {
+			font-size: var(--title_font_size_mobile);
+			line-height: var(--title_line_height_mobile);
+		}
 	
 	}
 	
@@ -725,7 +744,7 @@
 		font-family: Aldrich Rus;
 		font-style: normal;
 		font-weight: 400;
-		font-size: 32px;
+		font-size: var(--m_text_font_size);
 		line-height: 31px;
 		text-transform: uppercase;
 	
@@ -745,6 +764,7 @@
 	.price_block__package_price { }
 	.state_red_acent {
 		color: #FF0000;
+		white-space: nowrap;
 	}
 	.price_block__info { }
 	.price_block__info_list {
@@ -752,7 +772,7 @@
 		font-family: Aldrich Rus;
 		font-style: normal;
 		font-weight: 400;
-		font-size: 24px;
+		font-size: var(--text_font_size);
 		line-height: 40px;
 		text-transform: uppercase;
 		margin-left: 20px;
@@ -766,7 +786,7 @@
 		font-family: Aldrich Rus;
 		font-style: normal;
 		font-weight: 400;
-		font-size: 24px;
+		font-size: var(--text_font_size);
 		line-height: 40px;
 	
 		text-transform: uppercase;
@@ -784,13 +804,20 @@
 	
 		.price_block__package {
 			flex-wrap: wrap;
-			row-gap: 2vh;
+			row-gap: 1vh;
 		}
 		.price_block__package_name {
 			flex: 1 1 100%;
 		}
 		.price_block__package {
-			font-size: 30px;
+			font-size: var(--m_text_font_size_mobile);
+		}
+		.price_block__info_list, .price_block__subinfo {
+			font-size: var(--text_font_size_mobile);
+			line-height: var(--text_line_height_mobile);
+		}
+		.price_block__content {
+			gap: 5vh;
 		}
 	}
 	
@@ -929,7 +956,8 @@
 			display: block;
 		}
 		.info_card__title {
-			font-size: 34px;
+			font-size: var(--title_font_size_mobile);
+			line-height: var(--title_line_height_mobile);
 		}
 	}
 	

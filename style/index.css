@@ -66,6 +66,16 @@ h1, h2, h3, h4, h5, h6 {
   font-style: normal;
   font-weight: normal; }
 
+:root {
+  --text_font_size: 24px;
+  --text_font_size_mobile: 15px;
+  --text_line_height_mobile: 27px;
+  --m_text_font_size: 32px;
+  --m_text_font_size_mobile: 24px;
+  --title_font_size: 36px;
+  --title_font_size_mobile: 30px;
+  --title_line_height_mobile: 35px; }
+
 body {
   font-family: "Aldrich Rus";
   font-weight: 400; }
@@ -183,7 +193,8 @@ body {
       .nav .menu {
         padding: 3px 5px; } }
     .nav .menu .icon__menu {
-      display: none; }
+      display: none;
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
       @media (max-width: 1408px) {
         .nav .menu .icon__menu {
           cursor: pointer;
@@ -249,11 +260,11 @@ body {
           text-align: center;
           margin: 40px 0 0 0; }
           .nav .menu__list li {
-            padding: 0 0 30px 0; }
+            padding: 0 0 20px 0; }
             .nav .menu__list li:last-child {
               padding: 0; }
             .nav .menu__list li:first-child {
-              margin-top: 30px; } }
+              margin-top: 20px; } }
     .nav .menu__link, .nav .act-nav__region {
       color: #ffffff;
       font-family: "Aldrich Rus";
@@ -498,7 +509,7 @@ body {
   font-family: Aldrich Rus;
   font-style: normal;
   font-weight: 400;
-  font-size: 36px;
+  font-size: var(--title_font_size);
   line-height: 35px;
   text-transform: uppercase;
   color: #000000; }
@@ -519,7 +530,7 @@ body {
   font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: 500;
-  font-size: 24px;
+  font-size: var(--text_font_size);
   line-height: 30px;
   text-transform: uppercase;
   color: #000000;
@@ -684,7 +695,13 @@ body {
     -ms-flex-align: center;
     align-items: center; }
   .info_block__text {
-    font-size: 22px; } }
+    font-size: 22px; }
+  .info_block__text {
+    font-size: var(--text_font_size_mobile);
+    line-height: var(--text_line_height_mobile); }
+  .base_title {
+    font-size: var(--title_font_size_mobile);
+    line-height: var(--title_line_height_mobile); } }
 
 .guns_block {
   height: 100vh;
@@ -749,7 +766,7 @@ body {
   font-family: Aldrich Rus;
   font-style: normal;
   font-weight: 400;
-  font-size: 32px;
+  font-size: var(--m_text_font_size);
   line-height: 31px;
   text-transform: uppercase;
   display: -webkit-box;
@@ -774,14 +791,15 @@ body {
   margin-bottom: 0.5vh; }
 
 .state_red_acent {
-  color: #FF0000; }
+  color: #FF0000;
+  white-space: nowrap; }
 
 .price_block__info_list {
   color: #FFFFFF;
   font-family: Aldrich Rus;
   font-style: normal;
   font-weight: 400;
-  font-size: 24px;
+  font-size: var(--text_font_size);
   line-height: 40px;
   text-transform: uppercase;
   margin-left: 20px; }
@@ -794,7 +812,7 @@ body {
   font-family: Aldrich Rus;
   font-style: normal;
   font-weight: 400;
-  font-size: 24px;
+  font-size: var(--text_font_size);
   line-height: 40px;
   text-transform: uppercase;
   margin-top: 5vh; }
@@ -805,13 +823,18 @@ body {
   .price_block__package {
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    row-gap: 2vh; }
+    row-gap: 1vh; }
   .price_block__package_name {
     -webkit-box-flex: 1;
     -ms-flex: 1 1 100%;
     flex: 1 1 100%; }
   .price_block__package {
-    font-size: 30px; } }
+    font-size: var(--m_text_font_size_mobile); }
+  .price_block__info_list, .price_block__subinfo {
+    font-size: var(--text_font_size_mobile);
+    line-height: var(--text_line_height_mobile); }
+  .price_block__content {
+    gap: 5vh; } }
 
 .photo_block {
   max-height: 100vh;
@@ -928,7 +951,8 @@ swiper-slide img {
   .map_mobile {
     display: block; }
   .info_card__title {
-    font-size: 34px; } }
+    font-size: var(--title_font_size_mobile);
+    line-height: var(--title_line_height_mobile); } }
 
 .footer {
   background: #000000; }
