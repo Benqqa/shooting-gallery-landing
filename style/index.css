@@ -908,7 +908,7 @@ swiper-slide img {
 
 .info_card {
   width: 680px;
-  height: 324px;
+  min-height: 324px;
   background: #FFFFFF;
   -webkit-box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
@@ -945,7 +945,8 @@ swiper-slide img {
   text-transform: uppercase;
   color: #000000; }
 
-.state_bold_acent {
+.state_bold_acent, .state_bold_acent a {
+  color: #000;
   font-weight: bold; }
 
 .map_mobile {
