@@ -67,14 +67,17 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: normal; }
 
 :root {
-  --text_font_size: 24px;
+  --text_font_size: 20px;
   --text_font_size_mobile: 15px;
   --text_line_height_mobile: 27px;
-  --m_text_font_size: 32px;
+  --m_text_font_size: 28px;
   --m_text_font_size_mobile: 24px;
   --title_font_size: 36px;
   --title_font_size_mobile: 30px;
-  --title_line_height_mobile: 35px; }
+  --title_line_height_mobile: 35px;
+  --card_text_font_size: 15px;
+  --header_height:90px;
+  --header_height_mobile: 40px; }
 
 body {
   font-family: "Aldrich Rus";
@@ -118,14 +121,14 @@ body {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    height: 90px;
+    height: var(--header_height);
     position: relative;
     -webkit-box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
     background-color: #000000; }
     @media (max-width: 1408px) {
       .nav .nav__row {
-        height: 40px;
+        height: var(--header_height_mobile);
         -webkit-box-pack: end;
         -ms-flex-pack: end;
         justify-content: flex-end; } }
@@ -353,14 +356,14 @@ body {
       background: url("../../icon/globe_min.png") left center no-repeat; }
 
 .start_block {
-  margin-top: 90px;
-  height: calc(100vh - 90px);
+  margin-top: var(--header_height);
+  height: calc(100vh - var(--header_height));
   background: url("../img/bg.png") center center no-repeat fixed;
   background-size: cover; }
   @media (max-width: 1408px) {
     .start_block {
-      margin-top: 40px;
-      height: calc(100vh - 100px); } }
+      margin-top: var(--header_height_mobile);
+      height: calc(100vh - calc(60px + var(--header_height_mobile))); } }
 
 .start_block__container {
   -webkit-box-pack: justify;
@@ -649,7 +652,7 @@ body {
   font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: 600;
-  font-size: 18px;
+  font-size: var(--card_text_font_size);
   line-height: 22px;
   text-align: center;
   text-transform: uppercase;
@@ -701,7 +704,23 @@ body {
     line-height: var(--text_line_height_mobile); }
   .base_title {
     font-size: var(--title_font_size_mobile);
-    line-height: var(--title_line_height_mobile); } }
+    line-height: var(--title_line_height_mobile); }
+  .cards_line {
+    height: calc(100vh - var(--header_height_mobile));
+    overflow: hidden;
+    gap: 1vh; }
+  .card {
+    max-height: 20vh;
+    gap: 2vh; }
+  .card__icon_container {
+    height: 12vh;
+    width: 12vh; }
+  .card__icon {
+    height: 8vh;
+    width: 8vh; }
+  .card__text {
+    font-size: 2.1vh;
+    line-height: 2.1vh; } }
 
 .guns_block {
   height: 100vh;
@@ -998,8 +1017,7 @@ swiper-slide img {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  gap: 10px;
-  cursor: pointer; }
+  gap: 10px; }
 
 .footer__row a, .footer__row {
   font-family: 'Montserrat', sans-serif;
@@ -1009,8 +1027,25 @@ swiper-slide img {
   line-height: 25px;
   text-transform: uppercase;
   color: #9A9A9A; }
-  .footer__row a:hover, .footer__row:hover {
+
+.footer__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0.5vw; }
+
+.footer__row a {
+  cursor: pointer; }
+  .footer__row a:hover {
     text-decoration: underline; }
+
+.footer__row_icon {
+  height: 20px;
+  width: 20px; }
+
+.footer__row_icon img {
+  height: 100%;
+  width: 100%; }
 
 .footer__footer {
   border-top: 1px solid rgba(255, 255, 255, 0.309);

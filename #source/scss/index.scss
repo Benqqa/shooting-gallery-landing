@@ -34,14 +34,18 @@
 	$md4: 479.98;
 
 	:root {
-		--text_font_size: 24px;
+		--text_font_size: 20px;
 		--text_font_size_mobile: 15px;
 		--text_line_height_mobile: 27px;
-		--m_text_font_size: 32px;
+		--m_text_font_size: 28px;
 		--m_text_font_size_mobile: 24px;
 		--title_font_size: 36px;
 		--title_font_size_mobile: 30px;
 		--title_line_height_mobile: 35px;
+		--card_text_font_size: 15px;
+
+		--header_height:90px;
+		--header_height_mobile: 40px;
 	}
 	
 	
@@ -84,12 +88,12 @@
 		.nav__row {
 			display: flex;
 			align-items: center;
-			height: 90px;
+			height: var(--header_height);
 			position: relative;
 			box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
 			background-color: #000000;
 			@media (max-width:  $md3+1px) {
-				height: 40px;
+				height: var(--header_height_mobile);
 				justify-content: flex-end;
 			}
 		}
@@ -361,12 +365,12 @@
 	// стратовый блок
 	.start_block {
 		
-		margin-top: 90px;
-		height: calc(100vh - 90px);
+		margin-top: var(--header_height);
+		height: calc(100vh - var(--header_height));
 	
 		@media (max-width:  $md3+1px) {
-			margin-top: 40px;
-			height: calc(100vh - 100px);
+			margin-top: var(--header_height_mobile);
+			height: calc(100vh - calc(60px + var(--header_height_mobile)));
 		}
 		background: url("../img/bg.png") center center no-repeat  fixed;
 		background-size: cover;
@@ -610,7 +614,7 @@
 		font-family: 'Montserrat', sans-serif;
 		font-style: normal;
 		font-weight: 600;
-		font-size: 18px;
+		font-size: var(--card_text_font_size);
 		line-height: 22px;
 		text-align: center;
 		text-transform: uppercase;
@@ -671,6 +675,27 @@
 		.base_title {
 			font-size: var(--title_font_size_mobile);
 			line-height: var(--title_line_height_mobile);
+		}
+		.cards_line {
+			height: calc(100vh - var(--header_height_mobile));
+			overflow: hidden;
+			gap: 1vh;
+		}
+		.card {
+			max-height: 20vh;
+			gap: 2vh;
+		}
+		.card__icon_container {
+			height: 12vh;
+			width: 12vh;
+		}
+		.card__icon {
+			height: 8vh;
+			width: 8vh;
+		}
+		.card__text {
+			font-size: 2.1vh;
+			line-height: 2.1vh;
 		}
 	
 	}
@@ -994,7 +1019,6 @@
 		display: flex;
 		flex-direction: column;
 		gap: 10px;
-		cursor: pointer;
 	}
 	.footer__row a, .footer__row {
 		font-family: 'Montserrat', sans-serif;
@@ -1007,9 +1031,25 @@
 	
 		color: #9A9A9A;
 	
+	}
+	.footer__row {
+		display: flex;
+		gap: 0.5vw;
+	}
+	.footer__row a {
+		cursor: pointer;
+
 		&:hover {
 			text-decoration: underline;
 		}
+	}
+	.footer__row_icon {
+		height: 20px;
+		width: 20px;
+	}
+	.footer__row_icon img {
+		height: 100%;
+		width: 100%;
 	}
 	.footer__footer {
 		border-top: 1px solid rgba(255, 255, 255, 0.309);
