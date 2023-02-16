@@ -1084,7 +1084,9 @@ swiper-slide img {
     -ms-flex-pack: center;
     justify-content: center; }
   .footer__column {
-    min-width: 200px; } }
+    min-width: 200px; }
+  .footer__row {
+    gap: 2vw; } }
 
 @media (orientation: landscape) {
   .price_block, .map_block, .guns_block, .info_block, .start_block {

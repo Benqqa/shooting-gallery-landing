@@ -1099,6 +1099,9 @@
 		.footer__column {
 			min-width: 200px;
 		}
+		.footer__row {
+			gap: 2vw;
+		}
 	}
 
 @media (orientation: landscape) {
