@@ -610,7 +610,8 @@ body {
   background-repeat: repeat-x; }
 
 .card {
-  z-index: 2000;
+  z-index: 3000;
+  position: relative;
   -webkit-box-flex: 0 0 25%;
   -ms-flex-positive: 0 0 25%;
   flex-grow: 0 0 25%;
@@ -656,8 +657,8 @@ body {
   position: absolute;
   z-index: 1000;
   height: 100%;
-  width: 100%;
-  right: -100%;
+  width: 300%;
+  right: -300%;
   background-color: #ececec; }
 
 .card__icon {
@@ -803,7 +804,8 @@ body {
   flex-direction: column;
   gap: 3vh; }
 
-.price_block__package .price_block__package_title, .price_block__package .price_block__package_subtitle {
+.price_block__package .price_block__package_title,
+.price_block__package .price_block__package_subtitle {
   color: #ffffff;
   font-family: Aldrich Rus;
   font-style: normal;
@@ -873,7 +875,8 @@ body {
 @media (orientation: portrait) {
   .price_block {
     height: auto; }
-  .price_block__package_title, .price_block__package_subtitle {
+  .price_block__package_title,
+  .price_block__package_subtitle {
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     row-gap: 1vh; }
