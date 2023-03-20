@@ -92,8 +92,8 @@ $md3: 1407;
 $md4: 479.98;
 
 :root {
-  --text_font_size: 20px;
-  --text_font_size_mobile: 15px;
+  --text_font_size: 1.1em;
+  --text_font_size_mobile: 13px;
   --text_line_height_mobile: 27px;
   --m_text_font_size: 28px;
   --m_text_font_size_mobile: 18px;
@@ -793,6 +793,9 @@ body {
 @media (max-width: $md3+1px) {
   .guns_block {
     height: auto;
+    .price_block .base_title {
+      font-size: var(--m_text_font_size);
+    }
   }
 }
 @media (orientation: portrait) {
@@ -834,6 +837,9 @@ body {
 .guns_block__content {
   .price_block {
     border-radius: 20px;
+    @media (orientation: portrait) {
+      border-radius: 0;
+    }
     // width: 90%;
     margin: 0 5vw;
     justify-content: center;
@@ -851,7 +857,7 @@ body {
     padding: 3vh 3vw;
     display: flex;
     flex-direction: column;
-    gap: 4vh;
+    gap: 2vh;
   }
 }
 
@@ -870,18 +876,59 @@ body {
 
 .price_block__footer {
   display: flex;
+  flex-direction: column;
+  gap: 2vh;
+}
+
+.price_block__price {
+  display: flex;
   justify-content: start;
   gap: 10vw;
+}
+
+.price_block .price_block__button {
+  .button {
+    position: absolute;
+    bottom: 4vh;
+    right: 13vw;
+    z-index: 100;
+
+    @media (orientation: portrait) {
+      position: relative;
+      right: unset;
+      top: unset;
+      left: unset;
+      bottom: unset;
+    }
+  }
+
+  .button,
+  button {
+    @media (orientation: portrait) {
+      // position: relative;
+      width: 100%;
+    }
+  }
+  display: flex;
+  justify-content: center;
 }
 
 .price_block__numbers {
   display: flex;
   gap: 5vw;
+  @media (orientation: portrait) {
+    gap: 15vw;
+    // display: flex;
+    // justify-content: space-between;
+  }
 }
 .price_block__number_container {
   display: flex;
   flex-direction: column;
   gap: 1vh;
+  @media (orientation: portrait) {
+    max-width: 15vw;
+  }
 }
 .price_block__number {
   font-family: Aldrich Rus;
@@ -943,7 +990,7 @@ body {
 .price_block__header {
 }
 @media (orientation: portrait) {
-  .base_container.guns_block__container  {
+  .base_container.guns_block__container {
     padding: 1vh 1vw;
   }
 }
@@ -953,10 +1000,10 @@ body {
     margin: 0;
   }
   .price_block {
-    padding: 1vh;
+    padding: 0vh;
   }
   .price_block__container {
-    padding: 0;
+    padding: 1vh;
     padding-bottom: 2vh;
     gap: 2vh;
   }
@@ -967,6 +1014,9 @@ body {
     gap: unset;
   }
   .price_block__footer {
+  }
+
+  .price_block__price {
     justify-content: center;
   }
   .price_block .price_block__info {
@@ -974,7 +1024,7 @@ body {
   }
   .price_block__image {
     flex: 0 0 2vh;
-    max-height: 15vh;
+    max-height: 20vh;
     img {
       clip-path: polygon(100% 0, 100% 50%, 100% 100%, 50% 75%, 0 100%, 0% 0%);
     }
@@ -995,27 +1045,48 @@ body {
 
 .base_header {
 }
+
 .price_block__title {
   color: #ffffff;
   margin-bottom: 72px;
 }
-.guns_block {
+
+.price_block.rules {
   .price_block__title {
-    margin-bottom: 20px;
+    color: #000;
+    margin-bottom: 5vh;
+  }
+
+  .price_block__info_list {
+    color: #000;
   }
 }
+
+.price_block__info_list {
+  font-size: 18px;
+}
+
+.guns_block {
+  .price_block__title {
+    margin-bottom: 1vh;
+  }
+}
+
 .base_title {
 }
+
 .price_block__content {
   display: flex;
   flex-direction: column;
   gap: 2vh;
 }
+
 .price_block__packages {
   display: flex;
   flex-direction: column;
   gap: 3vh;
 }
+
 .price_block__package .price_block__package_title,
 .price_block__package .price_block__package_subtitle {
   color: #ffffff;
@@ -1040,36 +1111,43 @@ body {
   flex-direction: column;
   align-items: start;
 }
+
 .price_block__package_name {
   display: inline;
 }
+
 .price_block__package_line {
   flex: 1 1 auto;
   border-bottom: white dotted 4px;
   height: 50%;
   margin-bottom: 0.5vh;
 }
+
 .price_block__package_price {
 }
+
 .state_red_acent {
   color: #ff0000;
   white-space: nowrap;
 }
+
 .guns_block {
   .price_block__info {
-    margin-bottom: 50px;
+    margin-bottom: 2vh;
   }
 }
+
 .price_block__info_list {
   color: #ffffff;
   font-family: Aldrich Rus;
   font-style: normal;
   font-weight: 400;
   font-size: var(--text_font_size);
-  line-height: 40px;
+  line-height: 25px;
   text-transform: uppercase;
   margin-left: 20px;
 }
+
 .price_block__info_list > li {
   list-style-type: disc;
 }
@@ -1086,8 +1164,10 @@ body {
 
   margin-top: 5vh;
 }
+
 @media (max-width: $md3+1px) {
 }
+
 @media (orientation: portrait) {
   .price_block {
     height: auto;
@@ -1098,24 +1178,30 @@ body {
     flex-wrap: wrap;
     row-gap: 1vh;
   }
+
   .price_block__package_name {
     // flex: 1 1 100%;
     display: inline;
   }
+
   .price_block__package {
     font-size: var(--m_text_font_size_mobile);
   }
+
   .price_block__info_list,
   .price_block__subinfo {
     font-size: var(--text_font_size_mobile);
     line-height: var(--text_line_height_mobile);
   }
+
   .price_block__content {
     gap: 5vh;
   }
+
   .price_block__package_line {
     margin-bottom: 1.2vh;
   }
+
   .price_block__title {
     margin-bottom: 7vh;
   }
@@ -1158,6 +1244,9 @@ swiper-slide img {
   width: 100%;
   filter: drop-shadow(5px 6px 10px rgba(0, 0, 0, 0.2));
   border-radius: 20px;
+  @media (orientation: portrait) {
+    border-radius: 0;
+  }
 }
 
 .photo_block__slider {
@@ -1169,8 +1258,32 @@ swiper-slide img {
   display: none;
 }
 @media (max-width: $md3+1px) {
+  .price_block__button .button {
+    right: 8vw;
+  }
   .photo_block {
     height: auto;
+  }
+  .price_block__image {
+    flex: 1 0 35%;
+  }
+  .guns_block .price_block {
+    --m_text_font_size: 20px;
+    .price_block__info_list {
+      --text_font_size: 0.8em;
+    }
+    .price_block__number_label {
+      font-size: 7px;
+      line-height: unset;
+    }
+    .price_block__number {
+      font-size: 20px;
+      line-height: unset;
+    }
+    .price_block__subtitle {
+      font-size: 10px;
+      line-height: unset;
+    }
   }
 }
 @media (orientation: portrait) {
@@ -1397,6 +1510,12 @@ swiper-slide img {
   .start_block {
     height: auto;
   }
+  .guns_block:has(.price_block) {
+    height: 95vh;
+    swiper-container {
+      margin: auto;
+    }
+  }
   .price_block {
     // min-height: 80vh;
   }
@@ -1406,10 +1525,70 @@ swiper-slide img {
 .guns_block .mySwiper3_phone {
   swiper-slide {
     height: auto !important;
+    min-height: 60vh;
+    max-height: 70vh;
   }
   @media (orientation: portrait) {
     swiper-slide {
-      max-height: 90vh !important;
+      height: auto !important;
+      max-height: none;
+    }
+  }
+}
+
+// мобильный слайдер прайслиста
+@media (orientation: portrait) {
+  .guns_block:has(.mySwiper3_phone) {
+    .guns_block__header {
+      margin-top: 5vh;
+      padding-left: 3vw;
+    }
+  }
+  .price_block_background:has(.mySwiper3_phone) {
+    background: #000;
+  }
+  .mySwiper3_phone {
+    .price_block .base_title {
+      --m_text_font_size: 28px;
+    }
+    .price_slide {
+    }
+    .price_block,
+    .price_block__image img {
+      border-radius: 2vh;
+    }
+    swiper-slide {
+      padding: 1vh;
+    }
+    .price_block {
+      border: solid #2e2e2e 1px;
+    }
+    .price_block__container {
+      padding-top: 0;
+      gap: 2vh;
+    }
+    .price_block__header {
+      justify-content: center;
+      text-align: center;
+    }
+    .price_block__subtitle {
+      text-align: center;
+    }
+    .price_block__numbers {
+      justify-content: center;
+    }
+    .price_block__number_container {
+    }
+    .price_block__title {
+      font-size: 28px;
+    }
+  }
+  .guns_block:has(.price_block) {
+    swiper-container {
+      margin: 0;
+      padding: 0;
+      padding-bottom: 5vh;
+      padding-top: 2vh;
     }
   }
 }

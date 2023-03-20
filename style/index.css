@@ -83,8 +83,8 @@ h6 {
   font-weight: normal; }
 
 :root {
-  --text_font_size: 20px;
-  --text_font_size_mobile: 15px;
+  --text_font_size: 1.1em;
+  --text_font_size_mobile: 13px;
   --text_line_height_mobile: 27px;
   --m_text_font_size: 28px;
   --m_text_font_size_mobile: 18px;
@@ -775,7 +775,9 @@ body {
 
 @media (max-width: 1408px) {
   .guns_block {
-    height: auto; } }
+    height: auto; }
+    .guns_block .price_block .base_title {
+      font-size: var(--m_text_font_size); } }
 
 @media (orientation: portrait) {
   swiper-container.mySwiper2 {
@@ -807,6 +809,9 @@ body {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center; }
+  @media (orientation: portrait) {
+    .guns_block__content .price_block {
+      border-radius: 0; } }
 
 .price_block_background {
   background: url(../assets/img/wall.png) center center no-repeat;
@@ -824,7 +829,7 @@ body {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  gap: 4vh; }
+  gap: 2vh; }
 
 .guns_block .price_block .price_block__content {
   -webkit-box-flex: 1;
@@ -847,16 +852,53 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 2vh; }
+
+.price_block__price {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-pack: start;
   -ms-flex-pack: start;
   justify-content: start;
   gap: 10vw; }
+
+.price_block .price_block__button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center; }
+  .price_block .price_block__button .button {
+    position: absolute;
+    bottom: 4vh;
+    right: 13vw;
+    z-index: 100; }
+    @media (orientation: portrait) {
+      .price_block .price_block__button .button {
+        position: relative;
+        right: unset;
+        top: unset;
+        left: unset;
+        bottom: unset; } }
+  @media (orientation: portrait) {
+    .price_block .price_block__button .button,
+    .price_block .price_block__button button {
+      width: 100%; } }
 
 .price_block__numbers {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   gap: 5vw; }
+  @media (orientation: portrait) {
+    .price_block__numbers {
+      gap: 15vw; } }
 
 .price_block__number_container {
   display: -webkit-box;
@@ -867,6 +909,9 @@ body {
   -ms-flex-direction: column;
   flex-direction: column;
   gap: 1vh; }
+  @media (orientation: portrait) {
+    .price_block__number_container {
+      max-width: 15vw; } }
 
 .price_block__number {
   font-family: Aldrich Rus;
@@ -930,10 +975,10 @@ body {
   margin: 0; }
 
 .mySwiper3_phone .price_block {
-  padding: 1vh; }
+  padding: 0vh; }
 
 .mySwiper3_phone .price_block__container {
-  padding: 0;
+  padding: 1vh;
   padding-bottom: 2vh;
   gap: 2vh; }
 
@@ -943,7 +988,7 @@ body {
 .mySwiper3_phone .price_block__content {
   gap: unset; }
 
-.mySwiper3_phone .price_block__footer {
+.mySwiper3_phone .price_block__price {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center; }
@@ -955,7 +1000,7 @@ body {
   -webkit-box-flex: 0;
   -ms-flex: 0 0 2vh;
   flex: 0 0 2vh;
-  max-height: 15vh; }
+  max-height: 20vh; }
   .mySwiper3_phone .price_block__image img {
     -webkit-clip-path: polygon(100% 0, 100% 50%, 100% 100%, 50% 75%, 0 100%, 0% 0%);
     clip-path: polygon(100% 0, 100% 50%, 100% 100%, 50% 75%, 0 100%, 0% 0%); }
@@ -977,8 +1022,18 @@ body {
   color: #ffffff;
   margin-bottom: 72px; }
 
+.price_block.rules .price_block__title {
+  color: #000;
+  margin-bottom: 5vh; }
+
+.price_block.rules .price_block__info_list {
+  color: #000; }
+
+.price_block__info_list {
+  font-size: 18px; }
+
 .guns_block .price_block__title {
-  margin-bottom: 20px; }
+  margin-bottom: 1vh; }
 
 .price_block__content {
   display: -webkit-box;
@@ -1046,7 +1101,7 @@ body {
   white-space: nowrap; }
 
 .guns_block .price_block__info {
-  margin-bottom: 50px; }
+  margin-bottom: 2vh; }
 
 .price_block__info_list {
   color: #ffffff;
@@ -1054,7 +1109,7 @@ body {
   font-style: normal;
   font-weight: 400;
   font-size: var(--text_font_size);
-  line-height: 40px;
+  line-height: 25px;
   text-transform: uppercase;
   margin-left: 20px; }
 
@@ -1117,6 +1172,9 @@ swiper-slide img {
   -webkit-filter: drop-shadow(5px 6px 10px rgba(0, 0, 0, 0.2));
   filter: drop-shadow(5px 6px 10px rgba(0, 0, 0, 0.2));
   border-radius: 20px; }
+  @media (orientation: portrait) {
+    swiper-slide img {
+      border-radius: 0; } }
 
 .photo_block__slider swiper-slide img {
   height: 100%; }
@@ -1125,8 +1183,27 @@ swiper-slide img {
   display: none; }
 
 @media (max-width: 1408px) {
+  .price_block__button .button {
+    right: 8vw; }
   .photo_block {
-    height: auto; } }
+    height: auto; }
+  .price_block__image {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 0 35%;
+    flex: 1 0 35%; }
+  .guns_block .price_block {
+    --m_text_font_size: 20px; }
+    .guns_block .price_block .price_block__info_list {
+      --text_font_size: 0.8em; }
+    .guns_block .price_block .price_block__number_label {
+      font-size: 7px;
+      line-height: unset; }
+    .guns_block .price_block .price_block__number {
+      font-size: 20px;
+      line-height: unset; }
+    .guns_block .price_block .price_block__subtitle {
+      font-size: 10px;
+      line-height: unset; } }
 
 @media (orientation: portrait) {
   swiper-container.mySwiper {
@@ -1343,13 +1420,57 @@ swiper-slide img {
   .guns_block,
   .info_block,
   .start_block {
-    height: auto; } }
+    height: auto; }
+  .guns_block:has(.price_block) {
+    height: 95vh; }
+    .guns_block:has(.price_block) swiper-container {
+      margin: auto; } }
 
 .guns_block .mySwiper3 swiper-slide,
 .guns_block .mySwiper3_phone swiper-slide {
-  height: auto !important; }
+  height: auto !important;
+  min-height: 60vh;
+  max-height: 70vh; }
 
 @media (orientation: portrait) {
   .guns_block .mySwiper3 swiper-slide,
   .guns_block .mySwiper3_phone swiper-slide {
-    max-height: 90vh !important; } }
+    height: auto !important;
+    max-height: none; } }
+
+@media (orientation: portrait) {
+  .guns_block:has(.mySwiper3_phone) .guns_block__header {
+    margin-top: 5vh;
+    padding-left: 3vw; }
+  .price_block_background:has(.mySwiper3_phone) {
+    background: #000; }
+  .mySwiper3_phone .price_block .base_title {
+    --m_text_font_size: 28px; }
+  .mySwiper3_phone .price_block,
+  .mySwiper3_phone .price_block__image img {
+    border-radius: 2vh; }
+  .mySwiper3_phone swiper-slide {
+    padding: 1vh; }
+  .mySwiper3_phone .price_block {
+    border: solid #2e2e2e 1px; }
+  .mySwiper3_phone .price_block__container {
+    padding-top: 0;
+    gap: 2vh; }
+  .mySwiper3_phone .price_block__header {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    text-align: center; }
+  .mySwiper3_phone .price_block__subtitle {
+    text-align: center; }
+  .mySwiper3_phone .price_block__numbers {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center; }
+  .mySwiper3_phone .price_block__title {
+    font-size: 28px; }
+  .guns_block:has(.price_block) swiper-container {
+    margin: 0;
+    padding: 0;
+    padding-bottom: 5vh;
+    padding-top: 2vh; } }
