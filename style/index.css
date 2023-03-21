@@ -1013,11 +1013,6 @@ body {
 .mySwiper3_phone .price_block__number {
   font-size: 25px; }
 
-@media (max-width: 380px) {
-  .mySwiper3_phone .price_block__image {
-    max-height: 0;
-    padding-top: 2vh; } }
-
 .price_block__title {
   color: #ffffff;
   margin-bottom: 72px; }
@@ -1172,9 +1167,6 @@ swiper-slide img {
   -webkit-filter: drop-shadow(5px 6px 10px rgba(0, 0, 0, 0.2));
   filter: drop-shadow(5px 6px 10px rgba(0, 0, 0, 0.2));
   border-radius: 20px; }
-  @media (orientation: portrait) {
-    swiper-slide img {
-      border-radius: 0; } }
 
 .photo_block__slider swiper-slide img {
   height: 100%; }
@@ -1307,6 +1299,12 @@ swiper-slide img {
     font-size: var(--title_font_size_mobile);
     line-height: var(--title_line_height_mobile); } }
 
+.scroll_point__container {
+  position: relative; }
+  .scroll_point__container .scroll_point__item {
+    position: absolute;
+    top: -80px; }
+
 .footer {
   background: #000000; }
 
@@ -1421,10 +1419,8 @@ swiper-slide img {
   .info_block,
   .start_block {
     height: auto; }
-  .guns_block:has(.price_block) {
-    height: 95vh; }
-    .guns_block:has(.price_block) swiper-container {
-      margin: auto; } }
+  .guns_block:has(.price_block) swiper-container {
+    margin: auto; } }
 
 .guns_block .mySwiper3 swiper-slide,
 .guns_block .mySwiper3_phone swiper-slide {

@@ -757,6 +757,7 @@ body {
 }
 .guns_block__container {
   margin: auto;
+  // margin-top: 5vh;
 }
 .base_container {
 }
@@ -1037,8 +1038,8 @@ body {
   }
   @media (max-width: 380px) {
     .price_block__image {
-      max-height: 0;
-      padding-top: 2vh;
+      // max-height: 0;
+      // padding-top: 2vh;
     }
   }
 }
@@ -1244,9 +1245,6 @@ swiper-slide img {
   width: 100%;
   filter: drop-shadow(5px 6px 10px rgba(0, 0, 0, 0.2));
   border-radius: 20px;
-  @media (orientation: portrait) {
-    border-radius: 0;
-  }
 }
 
 .photo_block__slider {
@@ -1399,6 +1397,15 @@ swiper-slide img {
   }
 }
 
+
+//скрол точка
+.scroll_point__container {
+  position: relative;
+  .scroll_point__item {
+    position: absolute;
+    top: -80px;
+  }
+}
 // подвал
 .footer {
   background: #000000;
@@ -1511,9 +1518,10 @@ swiper-slide img {
     height: auto;
   }
   .guns_block:has(.price_block) {
-    height: 95vh;
+    // height: 95vh;
     swiper-container {
       margin: auto;
+      // margin-top: 50vh;
     }
   }
   .price_block {
